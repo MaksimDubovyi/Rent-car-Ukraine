@@ -1,0 +1,95 @@
+.indexBlock{
+  max-height: 85vh;
+  overflow: auto;
+}
+
+@media (max-width: 850px) {
+  .indexBlockChrome {
+    max-height: 65vh;
+    overflow: auto;
+  }
+}
+
+
+.infoCarBlock{
+  text-align: center;
+  border: inset 7px  rgb(82, 80, 80) ;
+  box-shadow:  -2px -2px 2px rgb(1, 125, 197);
+  border-radius: 15px;
+  margin:5% 5%;
+}
+
+.imgInf
+{
+  width: 50%;
+  border-radius: 5px;
+}
+
+p{
+  font-size: 20px;
+  font-weight: 500;
+}
+.buttonInf{
+  font-weight: 700;
+  font-size: 20px;
+  width: 80%;
+  margin:10px 0;}
+.colorIC
+{
+  display: inline-block;
+  width: 50px;
+  height: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+
+
+
+/* Вертикальний скролбар */
+::-webkit-scrollbar {
+  width: 10px; /* Ширина скролбара */
+}
+
+/* Курсор при наведенні на скролбар */
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Колір скролбара */
+  border-radius: 5px; /* Округлість скролбара */
+}
+
+/* Курсор при наведенні на скролбар */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Колір скролбара при наведенні */
+}
+
+/*                         -------        ------footer------      ------                            */
+.footermy {
+  position: absolute;
+  bottom: 0px; /* Додав одиницю виміру, наприклад, px */
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+}
+
+.footerBtnMessage {
+margin-left: 20px;
+}
+.footerBtnbtn{
+  width: 100px;
+  color: rgb(248, 243, 243);
+  font-size: 20px;
+  background-color: rgb(19, 85, 2);
+  margin: 7px;
+  border-radius: 7px;
+}
+.footerBtnExit {
+  width: 100px;
+  margin-right: 20px; /* Зсув до лівого краю */
+}

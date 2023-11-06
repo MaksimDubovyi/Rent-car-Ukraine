@@ -1,0 +1,48 @@
+
+
+
+
+<div class="container" [ngClass]="{ 'containerChrome': this.mrouterService.thisBrowser && this.mrouterService.thisWindowWidth, 'container': !this.mrouterService.thisBrowser || !this.mrouterService.thisWindowWidth }">
+<form  class="registerForm" [formGroup]="registerForm"  (ngSubmit)="submit()">
+  <p class="error" *ngIf="errorAll !== ''">{{ errorAll }}</p>
+
+  <label >Ім'я</label>
+  <input placeholder="Введіть ім'я" class="form-control textForm"  formControlName="firstName">
+  <p class="error" *ngIf="errorfirstName !== ''">{{ errorfirstName }}</p>
+
+  <label >Прізвище</label>
+  <input placeholder="Введіть прізвище" class="form-control textForm"  formControlName="lastName">
+  <p class="error" *ngIf="errorlastName !== ''">{{ errorlastName }}</p>
+
+  <label >Email</label>
+  <input placeholder="Введіть email" class="form-control textForm" type="email"  formControlName="email">
+  <p class="error" *ngIf="errorEmail !== ''">{{ errorEmail }}</p>
+
+  <label >Телефон</label>
+  <input placeholder="Введіть телефон" class="form-control textForm"   formControlName="phone">
+  <p class="error" *ngIf="errorPhone !== ''">{{ errorPhone }}</p>
+
+  <label >Досвід водіння</label>
+  <input placeholder="Введіть досвід" class="form-control textForm"   formControlName="drivingExperience">
+  <p class="error" *ngIf="errorDrivingExperience !== ''">{{ errorDrivingExperience }}</p>
+
+
+  <label>Вік</label>
+  <select class="form-select textForm" aria-label="Default select example" formControlName="age">
+    <option selected value="">Оберіть вік</option>
+    <option *ngFor="let age of ageList" [value]="age">{{ age }}</option>
+  </select>
+<p class="error" *ngIf="errorAge !== ''">{{ errorAge }}</p>
+
+
+  <label for="exampleInputPassword1">Пароль</label>
+  <input placeholder="Введіть пароль" class="form-control textForm" type="password" formControlName="password">
+  <p class="error" *ngIf="errorPassword !== ''">{{ errorPassword }}</p>
+
+  <label for="exampleInputPassword1">Підтвердити пароль</label>
+  <input placeholder="Введіть пароль" class="form-control textForm" type="password" formControlName="confirmPassword">
+  <p class="error" *ngIf="errorConfirmPassword !== ''">{{ errorConfirmPassword }}</p>
+
+  <button class="btn btn-primary buttomForm" style="margin-top: 5%;" type="button" (click)="submit()">Реєстрація <i  class="bi bi-door-open"></i></button>
+</form></div>
+

@@ -1,0 +1,14 @@
+
+<div class="footermy">
+
+  <button *ngIf="this.mrouterService.back === true"   class="btn btn-warning back" (click)="back()"><i class="bi bi-arrow-left"> назад</i></button>
+
+  <div class="footerBtnMessage">
+    <button  class="btn btn-success button2" (click)="messagelist()">смс <i class="bi bi-envelope"></i></button>
+    <div class="messageCount" *ngIf="this.messagesService.noReadMessages>0" ><span>{{this.messagesService.noReadMessages}}</span></div>
+  </div>
+
+  <div class="footerBtnExit">
+    <button  *ngIf="auth.getToken() !== false" class="btn btn-danger button2 " (click)="this.logout()">Вихід <i class="bi bi-box-arrow-right"></i></button>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<diV class="startButtoms">
+  <!-- <a style="color: rgb(6, 143, 255);" (click)="this.register()" >Реєстрація <i  class="bi bi-person-plus-fill"></i></a>
+  <a style="color: rgb(255, 238, 6);" (click)="this.login()">Авторизація <i class="bi bi-door-open-fill"></i></a> -->
+  <button  class="btn btn-primary mbtn"  type="button" (click)="this.register()" >Реєстрація  <i class="bi bi-person-plus-fill"></i></button>
+  <button  class="btn btn-success mbtn"  type="button" (click)="this.login()" >Авторизація  <i class="bi bi-door-open-fill"></i></button>
+  <button class="btn btn-secondary mbtn" (click)=" this.updatePF = !this.updatePF">Забув пароль<i class="bi bi-key"></i></button>
+
+ <form *ngIf="this.updatePF"  class="codeForm" [formGroup]="updatePasswordForm"  (ngSubmit)="sendNewPassword()">
+
+
+
+  <input placeholder="Введіть пошту" class="form-control textForm"  formControlName="email" required>
+
+  <button  class="btn btn-primary btnForm"  type="button"
+   (click)="sendNewPassword()" ><i class="bi bi-check-circle-fill btniForm"></i></button>
+</form>
+<p style="margin-left: 10%;" class="error" *ngIf="errorCode !== ''">{{ errorCode }}</p>
+
+</diV>
+
+
+

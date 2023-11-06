@@ -1,0 +1,51 @@
+.heading {
+  display: flex;
+  align-items: center; /* Вирівнює елементи по вертикалі */
+  background-color: black;
+  color: white;
+  height: 10vh;
+}
+
+.main{
+  text-decoration: none;
+  color: rgb(252, 254, 255);
+  font-size: 52px;
+  font-weight: 700;
+  font-family: Verdana, sans-serif;
+  margin-left: 2%;
+  margin-right: auto;
+
+}
+@media (max-width: 850px) {
+  .main {
+    font-size: 22px;
+  }
+}
+
+.main:hover{  color: rgb(134, 184, 224);}
+
+
+.headingA {
+position: absolute;
+right: 3vh;
+}
+.login{
+  text-decoration: none;
+  color: rgb(247, 249, 250);
+  font-size: 25px;
+}
+
+.btnGo{
+  color: rgb(0, 183, 255);
+  background-color: black;
+  border: none;
+}
+
+.imgM{
+font-size: 25px;
+position: absolute;
+left: 3vh;
+}
+
+
+

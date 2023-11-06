@@ -1,0 +1,43 @@
+
+<div class="blockMessage">
+
+  <div *ngFor="let message of this.messagesService.messageList">
+
+
+
+    <div  [ngClass]="{'messageRead': message.read === true, 'messageNoRead': message.read !== true}" (click)="getMessageAboutCar(message)">
+
+
+   <div class="onlineBlock">
+      <span  [ngClass]="{'online': message.online === true, 'notOnline': message.online !== true}"></span>
+       <p class="showName">{{message.showName}}</p>
+      <span *ngIf="message.online; else notOnline">( В мережі )</span>
+      <ng-template #notOnline>( Не в мережі )</ng-template>
+
+    </div>
+
+      <div style="display: flex;">
+          <div class="imgBlock">
+           <img  class="imga"  [src]="this.lessorService.carFotoPath +this.message.foto" >
+      </div>
+      <div class="txtBlock">
+          <p class="txtMessage" >{{ message.txt }}</p>
+     </div>
+
+      </div>
+
+
+     <div >
+      <p class="dateMessage">{{ message.date }}</p>
+     </div>
+
+
+    </div>
+
+  </div>
+
+
+</div>
+
+
+<!-- <app-footeruser></app-footeruser> -->

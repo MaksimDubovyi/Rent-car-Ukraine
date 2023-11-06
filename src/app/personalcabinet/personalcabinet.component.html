@@ -1,0 +1,45 @@
+
+
+<div class="avatar" (click)="openFileInput()">
+  <!-- Якщо у користувача немає аватар встановимо стандартну по замовчуванню -->
+  <img class="imga" [src]="this.auth.userShow?.avatar ? this.auth.avatarPath + this.auth.userShow?.avatar : this.auth.avatarPath +'car.jpg'" alt="Аватар">
+
+  <!-- Прихований інпут для вибору файлу -->
+   <!-- Використовуємо директиву #fileInput, щоб звертатися до цього елемента в коді компонента -->
+  <input #fileInput  type="file" accept=".jpg, .jpeg, .png" style="display: none;"   (change)="fileInputChange(fileInput)"   />
+</div>
+
+<div class="userInf">
+
+  <h3 class="userInf0">Привіт</h3>
+  <p class="userInf1">{{this.auth.userShow?.firstName}}</p>
+  <p class="userInf2">{{this.auth.userShow?.email}}</p>
+
+  <button class="btn btn-danger" (click)=" this.updatePF = !this.updatePF">Змінити пароль</button>
+</div>
+<form *ngIf="this.updatePF"  class="codeForm" [formGroup]="updatePasswordForm"  (ngSubmit)="updatePassword()">
+
+
+
+  <input placeholder="Введіть пароль" class="form-control textForm"  formControlName="password" required>
+
+
+  <button  class="btn btn-primary btnForm"  type="button"
+   (click)="updatePassword()" ><i class="bi bi-check-circle-fill btniForm"></i></button>
+</form>
+<p style="margin-left: 10%;" class="error" *ngIf="errorCode !== ''">{{ errorCode }}</p>
+
+
+
+
+<diV class="startButtoms">
+  <!-- <a (click)="this.tenant()" >Орендувати<i class="bi bi-search"></i></a> -->
+  <!-- <a (click)="this.lessor()" >Здати в оренду<i class="bi bi-cash"></i></a> -->
+  <button  class="btn btn-secondary mbtn"  type="button" (click)="this.tenant()" >Орендувати  <i class="bi bi-search"></i></button>
+  <button  class="btn btn-secondary mbtn"  type="button" (click)="this.lessor()" >Здати в оренду  <i class="bi bi-cash"></i></button>
+ </diV>
+
+
+
+
+

@@ -1,0 +1,58 @@
+.loginForm{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-top: 10%;
+  margin-left: 10%;
+  padding: 2% 10%;
+  border-radius: 8px;
+  box-shadow: 3px 4px 5px rgb(2, 75, 145);
+  font-weight: bolder;
+  font-size: 20px;
+  color: white;
+  background-color: rgb(35, 40, 44);
+}
+
+
+.codeForm{
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin-top: 3%;
+  margin-left: 10%;
+  padding: 2% 10%;
+  border-radius: 8px;
+  box-shadow: 3px 4px 5px rgb(241, 2, 2);
+  font-size: 15px;
+  color: white;
+  background-color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight:bold;
+}
+.textCodeForm
+{
+  color: black;
+  margin-right: 10px;
+}
+
+.buttomForm
+{  font-size: 20px;
+  font-weight:bold;
+}
+
+.textForm
+{
+  font-size: 20px;
+  box-shadow: inset 1px 1px 4px rgb(22, 22, 22);
+}
+.textForm:focus
+{
+  box-shadow: inset 1px 1px 15px rgb(42, 98, 201);
+}
+
+.error
+{
+  height: 18px;
+  font-size: 15px;
+  color: red;
+}

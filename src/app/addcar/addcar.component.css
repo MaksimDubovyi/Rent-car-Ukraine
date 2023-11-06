@@ -1,0 +1,78 @@
+.containerAdd
+{
+  z-index: 2;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.registerForm,.registerFormChrome{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 3px 4px 5px rgb(2, 75, 145);
+  font-weight: bolder;
+  font-size: 20px;
+  color: white;
+  background-color: rgb(35, 40, 44);
+  max-height: 700px;
+  overflow: auto;
+}
+@media (max-width: 800px)
+ {
+  .registerForm{
+    max-height: 585px;
+   }
+ }
+
+ @media (max-width: 850px) {
+  .registerFormChrome {
+    max-height: 500px;
+  }
+}
+
+
+
+h3{
+  margin:5% 25% ;
+}
+.buttomForm
+{  font-size: 20px;
+  font-weight:bold;
+  width: 80%;
+  margin-left:10%;
+  margin-bottom: 4%;
+}
+
+.textForm
+{
+  width: 80%;
+  font-size: 20px;
+  box-shadow: inset 1px 1px 4px rgb(22, 22, 22);
+  margin-left: 10%;
+}
+.textForm:focus
+{
+  box-shadow: inset 1px 1px 15px rgb(42, 98, 201);
+}
+.error
+{
+  height: 18px;
+  font-size: 15px;
+  color: red;
+  margin-left: 20%;
+}
+
+.climate{
+  margin: 5px;
+  width: 15px;}
+.margin{margin-top: 2%;
+margin-left: 10%;
+margin-right: 10%;
+}
+
+
+
+
+

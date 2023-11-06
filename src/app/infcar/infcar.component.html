@@ -1,0 +1,23 @@
+
+<div class="indexBlock"  [ngClass]="{ 'indexBlockChrome': this.mrouterService.thisBrowser && this.mrouterService.thisWindowWidth, 'indexBlock': !this.mrouterService.thisBrowser || !this.mrouterService.thisWindowWidth }">
+<div class="infoCarBlock">
+  <h1>{{this.autoService.carInf.brand}} {{this.autoService.carInf.model}}</h1>
+  <h3>{{this.autoService.carInf.age}} р.</h3>
+  <img class="imgInf" [src]="this.autoService.carInf.foto ? this.lessorService.carFotoPath + this.autoService.carInf.foto : this.lessorService.carFotoPath +'car.jpg'" >
+  <p> Ціна: {{this.autoService.carInf.price}} грн</p>
+
+    <p style="display: inline-block;">Колір: </p>
+    <div class="colorIC" [style.background-color]="autoService.carInf.color"> </div>
+
+  <p>Кондиціонер: {{ this.autoService.carInf.climate ? 'Так' : 'Ні' }}</p>
+  <p>Кількість дверей: {{this.autoService.carInf.door}}</p>
+  <p>Кількість місць: {{this.autoService.carInf.numberOfSeats}}</p>
+  <p>Обєм двигуна: {{this.autoService.carInf.engineCapacity}}</p>
+  <p>Тип трансмісії: {{this.autoService.carInf.transmissionType}}</p>
+  <p>Тип палива: {{this.autoService.carInf.fuelEype}}</p>
+
+  <button class="btn btn-danger buttonInf" (click)="DeleteCar(this.autoService.carInf.id)">Видалити авто <i class="bi bi-trash"></i></button>
+  <button class="btn btn-warning buttonInf" (click)="Back()">Назад <i class="bi bi-arrow-left-square"></i></button>
+</div>
+</div>
+

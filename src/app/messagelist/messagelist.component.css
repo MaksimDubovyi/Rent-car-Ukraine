@@ -1,0 +1,93 @@
+.blockMessage
+{
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 100%;
+  height: 83vh;
+  background-color: rgb(74, 90, 97);
+  padding: 2%;
+}
+
+.messageRead,.messageNoRead{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(41, 39, 39);
+  padding: 2% 3%;
+  margin-bottom: 1%;
+  border-radius: 8px;
+  color: white;
+}
+.messageNoRead{
+  background-color: rgba(165, 48, 48, 0.205);
+  color: rgb(0, 0, 0);
+}
+
+.onlineBlock {
+  display: flex;
+  margin-bottom: 1%;
+  font-weight: 800;
+  font-size: 10px;
+  color: rgb(164, 167, 34);
+
+
+}
+.showName{
+  color: rgb(111, 151, 238);
+  margin: -5px  10px 0px 5px;
+  font-size: 14px;
+
+}
+
+.online,.notOnline{
+
+  width: 10px;
+  height: 10px;
+  background-color: rgb(30, 255, 0);
+
+
+
+  border-radius: 50px;
+}
+.notOnline{  background-color: rgb(255, 0, 0);}
+
+.imgBlock{
+  width: 50px;
+  height: 50px;
+  border: 2px rgb(5, 172, 238) solid;
+  border-radius: 30%;
+}
+
+.imga
+{
+  width: 100%;
+  height: 100%;
+border-radius: 30%;
+}
+@media (min-width: 800px)
+ {
+  .imgBlock{
+    width: 100px;
+    height: 100px;
+  }
+ }
+
+.txtBlock{
+  width: 80%;
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.txtMessage{
+   font-weight: 500;
+  font-size: 15px;}
+
+.dateMessage{
+
+  /* margin-left: 50%; */
+  text-align: right;
+  font-weight: 700;
+  font-size: 10px;
+  color: rgb(164, 167, 34);}
+
+

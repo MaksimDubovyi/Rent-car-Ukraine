@@ -1,0 +1,89 @@
+<div class="containerAdd">
+
+<form   [formGroup]="registerForm"  (ngSubmit)="submit()" class="registerForm" id="content"  [ngClass]="{ 'registerFormChrome': this.mrouterService.thisBrowser && this.mrouterService.thisWindowWidth, 'registerForm': !this.mrouterService.thisBrowser || !this.mrouterService.thisWindowWidth }">
+<h3>Додати авто </h3>
+<div class="mb-2 margin" >
+    <label for="fileInput" class="form-label">Виберіть фото</label>
+    <input #fileInput  type="file" accept=".jpg, .jpeg, .png" class="form-control btn btn-outline-secondary" id="fileInput" (change)="onFileSelected(fileInput)">
+  </div>
+  <p class="error" *ngIf="errorFoto !== ''">{{ errorFoto }}</p>
+ <label class="margin">Ціна</label>
+ <input placeholder="Введіть ціну" class="form-control textForm"   formControlName="price">
+ <p class="error" *ngIf="errorPrice !== ''">{{ errorPrice }}</p>
+
+
+  <label class="margin">Марка</label>
+  <select class="form-select textForm" aria-label="Default select example" [(ngModel)]="selectedCar"  formControlName="brand">
+    <option selected [ngValue]="undefined">Оберіть марку авто</option>
+    <option *ngFor="let car of carModels" [ngValue]="car">{{ car.name }}</option>
+  </select>
+<p class="error" *ngIf="errorBrand !== ''">{{ errorBrand }}</p>
+
+<div class="margin" *ngIf="selectedCar !== undefined">
+  <label>Модель</label>
+  <select class="form-select " aria-label="Default select example" formControlName="model" >
+    <option [ngValue]="undefined" selected>Оберіть модель авто</option>
+    <ng-container *ngIf="selectedCar">
+      <option *ngFor="let model of selectedCar.model" [ngValue]="model">{{ model }}</option>
+    </ng-container>
+  </select>
+
+</div>
+ <p class="error" *ngIf="errorModel !== ''">{{ errorModel }}</p>
+
+
+<label class="margin">Рік</label>
+<input placeholder="Введіть рік" class="form-control textForm"   formControlName="age">
+<p class="error" *ngIf="errorAge !== ''">{{ errorAge }}</p>
+
+<div class="margin" style="display: flex;">
+  <label >Кондиціонер</label>
+  <input class="climate" type="checkbox"  id="btncheck1" formControlName="climate">
+</div>
+
+
+ <label class="margin"> Кількість дверей</label>
+ <input placeholder="Введіть кількість дверей" class="form-control textForm"   formControlName="door">
+ <p class="error" *ngIf="errorDoor !== ''">{{ errorDoor }}</p>
+
+  <label for="exampleColorInput" class="margin">Колір</label>
+  <input type="color" class="form-control form-control-color margin" id="exampleColorInput" value="" title="Choose your color" formControlName="color">
+  <p class="error" *ngIf="errorColor !== ''">{{ errorColor }}</p>
+
+  <label class="margin">Кількість місць</label>
+  <input placeholder="Введіть кількість місць" class="form-control textForm"   formControlName="numberOfSeats">
+  <p class="error" *ngIf="errorNumberOfSeats !== ''">{{ errorNumberOfSeats }}</p>
+
+  <label class="margin">Обєм двигуна</label>
+  <input placeholder="Введіть обєм двигуна" class="form-control textForm"   formControlName="engineCapacity">
+  <p class="error" *ngIf="errorEngineCapacity !== ''">{{ errorEngineCapacity }}</p>
+
+  <label class="margin">Тип трансмісії</label>
+  <select class="form-select textForm" aria-label="Default select example" formControlName="transmissionType">
+    <option selected value="">Оберіть тип</option>
+    <option  value="Механічна">Механічна</option>
+    <option  value="Автоматична">Автоматична</option>
+    <option  value="Електрична">Електрична</option>
+    <option  value="Редуктор">Редуктор</option>
+    <option  value="Повнопривідна трансмісія">Повнопривідна трансмісія</option>
+  </select>
+  <p class="error" *ngIf="errorTransmissionType !== ''">{{ errorTransmissionType }}</p>
+
+  <label class="margin">Тип палива</label>
+  <select class="form-select textForm" aria-label="Default select example"   formControlName="fuelЕype">
+    <option selected value="">Оберіть тип</option>
+    <option  value="Бензин">Бензин</option>
+    <option  value="Дизель">Дизель</option>
+    <option  value="Електроенергія">Електроенергія</option>
+    <option  value="Гібриди">Гібриди</option>
+    <option  value="Зріджений природний газ">Зріджений природний газ</option>
+    <option  value="Пропан">Пропан</option>
+    <option  value="Водень">Водень</option>
+    <option  value="Біопаливо">Біопаливо</option>
+    <option  value="Газовий бензин">Газовий бензин</option>
+    <option  value="Етанол">Гібриди</option>
+  </select>
+  <p class="error" *ngIf="errorFuelType !== ''">{{ errorFuelType }}</p>
+  <button class="btn btn-primary buttomForm" style="margin-top: 5%;" type="button" (click)="submit()">Додати <i class="bi bi-plus-square"></i></button>
+</form>
+</div>

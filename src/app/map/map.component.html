@@ -1,0 +1,26 @@
+
+
+<div class="map-wrap">
+
+    <div class="searchContainer">
+      <span class="text-danger" [textContent]="locationService.error"></span>
+    <form  class="searchForm" [formGroup]="form"  (ngSubmit)="submit()">
+      <input placeholder="Введіть місто для пошуку" class="searchInput" type="text" formControlName="address" (input)="onInput($event)">
+      <button class="searchButton" type="button" (click)="submit()"><i  class="bi bi-search"></i></button>
+    </form>
+
+    <div *ngIf="locationService.addresses.length > 0" class="geocoders" id="geocoders" [class.active]="geocoderSelected">
+      <div class="geocoder" *ngFor="let address of locationService.addresses"  (click)="onSelect(address)">
+        {{ address.name }}
+      </div>
+    </div>
+</div>
+
+
+ <div class="map" #map [ngClass]="{ 'mapChrome': this.mrouterService.thisBrowser && this.mrouterService.thisWindowWidth, 'map': !this.mrouterService.thisBrowser || !this.mrouterService.thisWindowWidth }"></div>
+
+
+
+</div>
+
+<!-- <app-footer></app-footer> -->

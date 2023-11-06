@@ -1,0 +1,153 @@
+/*--------Фільтрація------*/
+
+
+.filtermapBlock
+{
+  display: flex;
+}
+
+.menuBtn
+{
+
+  text-align: center;
+  color: rgb(1, 5, 248);
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  font-size: 20px;
+  position: absolute;
+  right: 3vh;
+  top: 3vh;
+  width: 30px;
+}
+
+.menuBtn:hover{
+  border: 2px rgb(255, 255, 255) solid;
+}
+
+.filterBlock
+{
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  top: 10;
+  width: 85%;
+  display: flex;
+  color: white;
+  background-color: rgb(35, 40, 44);
+  max-height: 70vh;
+  overflow: auto;
+  overflow-x: hidden;
+  border-radius: 0 0 8px 0;
+  box-shadow: 3px 4px 5px rgb(2, 75, 145);
+
+transition: 1s;
+transform: translateX(-100%);
+}
+.meny_active{
+  transform: translateX(0%);
+}
+
+.filterBlock:hover
+{ box-shadow:  0px -5px 15px rgb(42, 98, 201);
+
+}
+@media (min-width: 800px)
+{
+ .filterBlock{
+  max-height: 70vh;
+  width: 30%;
+
+  }
+}
+
+h3{font-size: 18; font-weight: 700; margin-left: 28%; margin-top: 5%;}
+h5{
+  font-size: 15px;
+   margin-left: 10%;
+   margin-top: 10px;
+   margin-bottom:0px;
+   font-weight: 700;
+  }
+.margin{margin-left: 5%;}
+.priceAgeBlock{
+  width: 100%;
+  margin: 0 2%;
+}
+
+.buttomForm
+{  font-size: 15px;
+  font-weight:bold;
+  width: 80%;
+  margin: 5% 10%;
+}
+
+.textForm
+{
+  font-size: 15px;
+  box-shadow: inset 1px 1px 4px rgb(22, 22, 22);
+}
+.textForm:focus
+{
+  box-shadow: inset 1px 1px 15px rgb(42, 98, 201);
+}
+
+.texWidth{margin-left: 5%;
+  width: 90%;
+}
+@media (min-width: 800px)
+{
+ .texWidth{margin-left: 7%; width: 100%;}
+ .priceAgeBlock{margin-left: 7%;
+  width: 100%;
+}
+}
+
+.error
+{
+  height: 18px;
+  font-size: 15px;
+  color: red;
+}
+
+.climate{
+  margin: 5px;
+  width: 15px;}
+
+.blockCar
+{
+  position: absolute;
+  bottom: 7vh; /* Додав одиницю виміру, наприклад, px */
+  width: 100%;
+  /* height: 16vh; */
+
+  background-color: black;
+
+}
+
+.carsHeadBlock{
+  padding: 0 2% ;
+  font-weight: bolder;
+  font-size: 15px;
+  color: white;
+  background-color: rgb(35, 40, 44);
+  width: 100%;
+  height: 4vh;
+}
+
+.carsBlock
+{
+  padding: 1% 2% ;
+  box-shadow: 3px 4px 5px rgb(2, 75, 145);
+  font-weight: bolder;
+  font-size: 15px;
+  color: white;
+  background-color: rgb(35, 40, 44);
+  max-height: 8vh;
+  overflow: auto;
+  width: 100%;
+}
+
+
+
+
+

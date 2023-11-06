@@ -1,0 +1,160 @@
+
+<div class="filtermapBlock">
+
+  <div class="menuBtn" id="menuBtn" (click)="menuActive()"><i  class="bi bi-funnel-fill"></i></div>
+
+  <div class="filterBlock" id="filterBlock">
+    <form   [formGroup]="filterForm"  (ngSubmit)="submit()">
+
+     <h3>Фільтрувати</h3>
+
+
+     <h5 class="margin">Ціна:</h5>
+    <div  style="display: flex;">
+      <div class="priceAgeBlock">
+        <label class="margin">від </label>
+        <input placeholder="Введіть ціну" class="form-control textForm"   formControlName="priceFrom">
+       </div>
+       <div class="priceAgeBlock">
+         <label class="margin">до</label>
+         <input placeholder="Введіть ціну" class="form-control textForm"   formControlName="priceTo">
+        </div>
+    </div>
+
+
+    <h5 class="margin">Рік:</h5>
+    <div  style="display: flex;">
+      <div class="priceAgeBlock">
+        <label class="margin">від </label>
+        <input class="form-control textForm"   formControlName="ageFrom">
+       </div>
+       <div class="priceAgeBlock">
+         <label class="margin">до</label>
+         <input p class="form-control textForm"   formControlName="ageTo">
+        </div>
+    </div>
+    <p class="error" *ngIf="errorYear !== ''">{{ errorAge }}</p>
+
+    <h5 class="margin">Орендувати:</h5>
+    <div  style="display: flex;">
+      <div class="priceAgeBlock">
+        <label class="margin">від </label>
+        <input class="form-control textForm" type="date"  formControlName="dateFrom">
+       </div>
+       <div class="priceAgeBlock">
+         <label class="margin">до</label>
+         <input p class="form-control textForm" type="date"   formControlName="dateTo">
+        </div>
+    </div>
+    <p class="error" *ngIf="errorAge !== ''">{{ errorAge }}</p>
+
+
+    <div  style="display: flex; margin:15px 0; ">
+      <h5 style=" margin-top:0px; " >Кондиціонер:</h5>
+      <input class="climate" type="checkbox"  id="btncheck1" formControlName="climate">
+    </div>
+
+    <div class="texWidth">
+      <h5 class="margin">Марка:</h5>
+      <select class="form-select textForm" aria-label="Default select example" [(ngModel)]="selectedCar"  formControlName="brand">
+        <option selected [ngValue]="undefined">Оберіть марку авто</option>
+        <option *ngFor="let car of carModels" [ngValue]="car">{{ car.name }}</option>
+      </select>
+
+
+    <div *ngIf="selectedCar !== undefined">
+      <h5>Модель</h5>
+      <select class="form-select textForm" aria-label="Default select example" formControlName="model" >
+        <option [ngValue]="undefined" selected>Оберіть модель авто</option>
+        <ng-container *ngIf="selectedCar">
+          <option *ngFor="let model of selectedCar.model" [ngValue]="model">{{ model }}</option>
+        </ng-container>
+      </select>
+    </div>
+
+
+     <h5 class="margin"> Кількість дверей</h5>
+     <input placeholder="Введіть кількість дверей" class="form-control textForm"   formControlName="door">
+     <p class="error" *ngIf="errorDoor !== ''">{{ errorDoor }}</p>
+
+
+      <h5 class="margin">Кількість місць</h5>
+      <input placeholder="Введіть кількість місць" class="form-control textForm"   formControlName="numberOfSeats">
+      <p class="error" *ngIf="errorNumberOfSeats !== ''">{{ errorNumberOfSeats }}</p>
+
+
+      <h5 class="margin">Трансмісія</h5>
+      <select class="form-select textForm " aria-label="Default select example" formControlName="transmissionType">
+        <option selected value="">Оберіть тип</option>
+        <option  value="Механічна">Механічна</option>
+        <option  value="Автоматична">Автоматична</option>
+        <option  value="Електрична">Електрична</option>
+        <option  value="Редуктор">Редуктор</option>
+        <option  value="Повнопривідна трансмісія">Повнопривідна трансмісія</option>
+      </select>
+
+
+      <h5 class="margin">Тип палива</h5>
+      <select class="form-select textForm " aria-label="Default select example"   formControlName="fuelЕype">
+        <option selected value="">Оберіть тип</option>
+        <option  value="Бензин">Бензин</option>
+        <option  value="Дизель">Дизель</option>
+        <option  value="Електроенергія">Електроенергія</option>
+        <option  value="Гібриди">Гібриди</option>
+        <option  value="Зріджений природний газ">Зріджений природний газ</option>
+        <option  value="Пропан">Пропан</option>
+        <option  value="Водень">Водень</option>
+        <option  value="Біопаливо">Біопаливо</option>
+        <option  value="Газовий бензин">Газовий бензин</option>
+        <option  value="Етанол">Гібриди</option>
+      </select>
+    </div>
+      <button class="btn btn-primary buttomForm"  type="button" (click)="submit()">Фільтрувати <i class="bi bi-funnel-fill"></i></button>
+    </form>
+  </div>
+
+
+<div class="map">
+  <app-maptenant></app-maptenant>
+</div>
+
+</div>
+
+<div class="blockCar">
+<div class="carsHeadBlock">
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th style="width:7%;"></th>
+        <th scope="col" style="width:15%;">Фото</th>
+        <th scope="col">Ціна</th>
+        <th ></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+  </table>
+</div>
+<div style="width: 100%; height: 1px; background-color: rgb(2, 75, 145);">-</div>
+<div class="carsBlock">
+
+  <table class="table table-dark table-striped">
+    <tbody>
+      <tr *ngFor="let car of this.locationtenantService.carsWaiting; let index = index">
+        <th scope="row">{{ index + 1 }}</th>
+        <td><img [src]="car.foto ? this.lessorService.carFotoPath + car.foto : this.lessorService.carFotoPath +'car.jpg'"  style="width: 50px; border-radius: 5px;"></td>
+        <td>{{ car.price }}</td>
+        <th scope="row" >{{car.status}}</th>
+        <td></td>
+        <td>
+          <button class="btn btn-warning" style="font-weight:bolder ; margin-left: -15px;" (click)="cancelReservation(car)">Скасовувати</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+</div>
+
+

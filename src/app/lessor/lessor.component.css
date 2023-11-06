@@ -1,0 +1,124 @@
+
+
+/* кнопка меню */
+
+
+
+  .menu-brn{
+
+    text-align: center;
+    color: rgb(255, 255, 255);
+    background-color: rgb(13, 110, 253);
+    border-radius: 8px;
+    font-size: 20px;
+    position: absolute;
+    right: 3vh;
+    top: 3vh;
+    padding:0px 5px 5px 5px;
+    width: 60px;
+  }
+.menu-brn:active{
+  box-shadow: 1px 1px 5px rgb(103, 255, 2);
+}
+
+
+.menu{
+  transition: 1s;
+  transform: translateX(-100%);
+  width: 80%;
+ }
+ .active_menu
+ {
+   transform: translateX(0%);
+ }
+
+
+
+
+ .content,.contentChrome{
+  transition: 1s;
+  transform: translateX(0%);
+  margin: 5px;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-height: 78vh;
+  margin-top: auto;
+ }
+
+@media (min-width: 800px)
+ {
+  .menu{  width: 20%;}
+ }
+
+ @media (max-width: 850px) {
+  .contentChrome {
+    max-height: 66vh;
+  }
+}
+
+.active_content
+{
+  transform: translateX(80%);
+}
+@media (min-width: 800px)
+ {
+  .active_content{transform: translateX(20%);}
+ }
+.menu_active{
+display: block;
+}
+
+.contentTable{
+  padding: 0 2% ;
+  font-weight: bolder;
+  box-shadow: 3px 4px 5px rgb(2, 75, 145);
+  background-color: rgb(35, 40, 44);
+  margin: 1% 2%;
+  width: 95%;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.btn{
+  font-size: 12px;
+}
+@media (min-width: 800px)
+ {
+  .btn{
+    font-size: 20px;
+  }
+  .contentTable{
+    font-size: 20px;
+  }
+ }
+
+
+/*                         -------        ------rentForm------      ------                            */
+
+
+.rentForm{
+  font-weight: 700;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+  margin: 1% 20%;
+}
+.error
+{
+  height: 18px;
+  font-size: 15px;
+  color: red;
+}
+
+
+
+.choiseCar{
+
+  margin: 1% 5%;
+  font-weight: 700;
+  font-size: 22px;
+  color: rgb(0, 0, 0);
+}
+
+
+

@@ -1,0 +1,40 @@
+
+  <form  class="loginForm" [formGroup]="loginForm"  (ngSubmit)="submit()">
+
+    <label for="exampleInputPassword1">Пошта</label>
+    <input placeholder="Введіть Email" class="form-control textForm" type="text" formControlName="email">
+     <p class="error" *ngIf="errorName !== ''">{{ errorName }}</p>
+
+
+
+    <label for="exampleInputPassword1">Пароль</label>
+    <input placeholder="Введіть пароль" class="form-control textForm" type="password" formControlName="password">
+    <p class="error" *ngIf="errorPassword !== ''">{{ errorPassword }}</p>
+
+    <button *ngIf="!this.auth.isEmailConfirmCode"
+    class="btn btn-primary buttomForm"
+    style="margin-top: 5%;" type="button"
+     (click)="submit()"
+     [disabled]="loginForm.invalid||loginForm.disabled"
+     >Вхід <i  class="bi bi-door-open"></i></button>
+  </form>
+
+<p *ngIf="this.auth.isEmailConfirmCode" style="margin-left: 10%; margin-top: 3%; color: red;">Введіть код  відправлений вам на пошту при реєстрації!</p>
+  <form *ngIf="this.auth.isEmailConfirmCode"  class="codeForm" [formGroup]="codeEmailForm"  (ngSubmit)="confirmMail()">
+
+
+    <label class="textCodeForm">Код</label>
+    <input placeholder="Введіть код підтвердження" class="form-control textForm"  formControlName="codeEmail" required>
+
+
+    <button
+    class="btn btn-outline-primary "
+    style="margin-left: 5%;" type="button"
+     (click)="confirmMail()"
+     [disabled]="loginForm.invalid||loginForm.disabled"
+     > <i class="bi bi-check-circle-fill"></i></button>
+  </form>
+  <p style="margin-left: 10%;" class="error" *ngIf="errorCode !== ''">{{ errorCode }}</p>
+
+
+

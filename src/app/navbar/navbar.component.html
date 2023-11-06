@@ -1,0 +1,24 @@
+
+<div class="heading">
+
+  <!-- <div class="imgM"><img src="assets/ico/car.png"></div>  приклад як додавати картинку -->
+
+  <div style="margin-left: 3vw; "  *ngIf="auth.getToken() !== false">
+    <button  class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-person-circle"></i>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" (click)="go()">Кабінет</a></li>
+      <li><a class="dropdown-item" (click)="messagelist()">Повідомлення</a></li>
+      <li><a class="dropdown-item" (click)="this.logout()">Вихід</a></li>
+    </ul>
+  </div>
+
+ <a class="main"  (click)="this.main()">Rent car Ukraine</a>
+
+
+  <div class="headingA">
+    <a *ngIf="auth.getToken() === false" class="login" (click)="this.selection()" ><i class="bi bi-box-arrow-in-right"></i></a>
+  </div>
+</div>
+
